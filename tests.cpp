@@ -426,3 +426,18 @@ TEST(EdgeCases, VeryLargeNumber) {
     EXPECT_EQ(a.to_string(), big);
     EXPECT_EQ((a + BigInteger(1)).to_string(), "1" + std::string(100, '0'));
 }
+#include "big_integer.h"
+#include <iostream>
+
+int main() {
+    // Тест 1: сложение
+    BigInteger a(123);
+    BigInteger b(456);
+    BigInteger c = a + b;
+    std::cout << "123 + 456 = " << c << std::endl;
+    
+    // Тест 2: вычитание
+    BigInteger d(1000);
+    BigInteger e(999);
+    BigInteger f = d - e;
+    std::cout << "1000 - 999 = " << f << std::endl;
